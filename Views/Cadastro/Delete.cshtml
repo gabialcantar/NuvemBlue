@@ -4,48 +4,147 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Nuvem Azul Fashion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            background-color: #FFF3B0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            padding: 20px;
+        }
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Cadastro</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Telefone)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Telefone)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Endereco)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Endereco)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Senha)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Senha)
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
-</div>
+        h1, h3 {
+            color: #D9534F;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        h4 {
+            color: #5AB1D9;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(to right, #FDC5DC, #FFF3B0, #AEE1F9);
+            margin-bottom: 30px;
+        }
+
+        .container-custom {
+            max-width: 700px;
+            margin: auto;
+            background-color: #FFFFFF;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        dt {
+            font-weight: bold;
+            color: #5AB1D9;
+        }
+
+        dd {
+            margin-bottom: 15px;
+        }
+
+        .btn-danger {
+            background-color: #D9534F;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+            .btn-danger:hover {
+                background-color: #c9302c;
+            }
+
+        a {
+            margin-left: 10px;
+            color: #5AB1D9;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-custom">
+        <h1>Excluir Cadastro</h1>
+        <h3>Você deseja mesmo excluir o seu cadastro em nossa plataforma?</h3>
+
+        <h4>Cadastro</h4>
+        <hr />
+
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Telefone)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Telefone)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Endereco)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Endereco)
+            </dd>
+
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.Senha)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Senha)
+            </dd>
+        </dl>
+
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <input type="submit" value="Excluir" class="btn btn-danger" />
+            <a asp-action="Index">Cancelar</a>
+        </form>
+    </div>
+</body>
+</html>
